@@ -15,6 +15,7 @@ let firstNumber 	= 0,
 	needToClear 	= false;
 
 function clampRes(num) {
+	if(!Number.isInteger(num)) num = num.toFixed(2);
 	if(isNaN(num)) return num;
 	return num < MAX_NUMBER ? num : MAX_NUMBER;
 }
