@@ -32,7 +32,7 @@ function changeValue(num) {
 	if(displayValue === 0) value.textContent = num;
 	else value.textContent += num;
 
-	displayValue = parseInt(value.textContent);
+	displayValue = parseFloat(value.textContent);
 }
 
 function changeOp(op) {
