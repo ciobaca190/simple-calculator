@@ -15,8 +15,8 @@ let firstNumber 	= 0,
 	needToClear 	= false;
 
 function clampRes(num) {
-	if(!Number.isInteger(num)) num = num.toFixed(2);
 	if(isNaN(num)) return num;
+	if(!Number.isInteger(num)) num = num.toFixed(2);
 	return num < MAX_NUMBER ? num : MAX_NUMBER;
 }
 
@@ -114,3 +114,10 @@ eqButton.addEventListener("click", evt => {
 	operation.textContent = "=";
 	needToClear = true;
 });
+
+window.addEventListener("keydown", evt => {
+	const button = document.querySelector(`button[data-key="${evt.key}"]`)
+	if(!button) return;
+
+	button.click();
+})
